@@ -1,0 +1,21 @@
+<div *ngIf="displayable && control.invalid">
+  <div *ngIf="control.hasError('required')">
+    Ce champ est requis
+  </div>
+  <div *ngIf="control.hasError('maxlength')">
+    Ce champ ne doit pas dépasser {{ control.errors.maxlength.requiredLength }} caractères
+  </div>
+  <div *ngIf="control.hasError('emptyList')">
+    Cette liste ne doit pas être vide
+  </div>
+  <div *ngIf="control.hasError('requiredHours')">
+    Les horaires sont requis
+  </div>
+  <div *ngIf="control.hasError('openingAfterClosing') && !control.hasError('requiredHours')">
+    L'horaire d'ouverture doit être inférieure à l'horaire de fermeture
+  </div>
+  <div *ngIf="control.hasError('notNumberMinMaxLength')">
+    Ce champ doit être un nombre d'une longueur de {{ control.errors.notNumberMinMaxLength.min }} à {{ control.errors.notNumberMinMaxLength.max
+    }} chiffres
+  </div>
+</div>

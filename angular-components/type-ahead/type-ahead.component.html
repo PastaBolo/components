@@ -1,0 +1,8 @@
+<ng-template #tpl>
+  <ul *ngIf="displayResults"
+      (mouseenter)="mouseOverList = true"
+      (mouseleave)="mouseOverList = false">
+    <li *ngFor="let result of results"
+        (click)="onClickItem(result)">{{ result[propertyToDisplay] }}</li>
+  </ul>
+</ng-template>

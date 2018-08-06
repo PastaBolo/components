@@ -1,0 +1,41 @@
+.upload-image-wrapper {
+  border: 1px dashed #ccd1d9;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-weight: normal;
+  }
+
+  label:hover {
+    cursor: pointer;
+
+    .add-icon {
+      transform: scale(1.5, 1.5);
+    }
+  }
+
+  .dragging {
+    .add-icon {
+      transform: scale(1.5, 1.5);
+    }
+  }
+
+  .add-icon {
+    color: #FF8A00;
+    font-size: 40px;
+    transition: transform .2s ease-in-out;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="upload-image-wrapper">
+  <label [ngClass]="{dragging: dragging}"
+         (dragenter)="dragging=true"
+         (dragleave)="dragging=false"
+         (dragover)="onDragOver($event)"
+         (drop)="onDrop($event)">
+    <input #inputFile
+           type="file"
+           accept="image/png, image/jpeg"
+           (change)="onChange($event)">
+    <i class="fa fa-plus-circle add-icon"></i>
+    Upload file here
+  </label>
+</div>

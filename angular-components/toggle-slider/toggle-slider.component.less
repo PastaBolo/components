@@ -1,0 +1,47 @@
+app-toggle-slider {
+  @inactiveColor: #ccc;
+  @activeColor: #4767f2;
+  @transitionDuration: 0.4s;
+  @height: 30px;
+  @borderSize: 2px;
+  @width: 2 * @height - 2 * @borderSize;
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  input {display: none;}
+
+  .parent {
+    background-color: @inactiveColor;
+    border: @borderSize solid @inactiveColor;
+    border-radius: @height / 2;
+    display: flex;
+    width: @width;
+    height: @height;
+    transition: @transitionDuration;
+  }
+
+  .child {
+    flex: 1;
+    background-color: #fff;
+    border-radius: (@height - 2 * @borderSize) / 2;
+    transition: @transitionDuration;
+  }
+
+  .parent:before,
+  .parent:after {
+    content: '';
+    transition: @transitionDuration;
+  }
+  .parent:before {flex: 0;}
+  .parent:after {flex: 1;}
+
+  :checked+.parent {
+    background-color: @activeColor;
+    border-color: @activeColor;
+  }
+  :checked+.parent:before {flex: 1;}
+  :checked+.parent:after {flex: 0;}
+}

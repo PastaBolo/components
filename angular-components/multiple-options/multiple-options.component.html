@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div #item
+       *ngFor="let ref of references"
+       class="item">
+    <label [ngClass]="{'active': control.value.includes(ref.Id)}">
+      <input type="checkbox"
+             [value]="ref.Id"
+             [checked]="control.value.includes(ref.Id)"
+             (change)="updateList($event)">
+      <span>{{ ref.Label }}</span>
+    </label>
+  </div>
+</div>

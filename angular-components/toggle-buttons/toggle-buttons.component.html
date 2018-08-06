@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <label [ngClass]="{'active': control.value === true}"
+         (click)="control.setValue(true)">
+    {{ references.checked }}
+  </label>
+  <label [ngClass]="{'active': control.value === false}"
+         (click)="control.setValue(false)">
+    {{ references.unchecked }}
+  </label>
+</div>
